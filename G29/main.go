@@ -14,10 +14,15 @@ func main() {
 	fmt.Println("\nToday: ", loc, "Time: ", pastDate)
 
 	difference := now.Sub(pastDate)
-	days := difference.Hours() / 24
-	hours := difference.Hours()
-	minutes := difference.Minutes()
-	seconds := difference.Seconds()
+	days := int(difference.Hours() / 24)
+	hours := int(difference.Hours())
+	minutes := int(difference.Minutes())
+	seconds := int(difference.Seconds())
 
-	fmt.Println("Difference in\nDays: %d", days, "\nHours: %d", hours, "\nMinutes", minutes, "\nSeconds", seconds)
+	// fmt.Printf("Difference in\nDays: %d", days, "\nHours: %d", hours, "\nMinutes", minutes, "\nSeconds", seconds)
+	fmt.Print("Difference in:\n")
+	fmt.Printf("Days: %d\n", days)
+	fmt.Printf("Hours: %d\n", hours)
+	fmt.Printf("Minutes: %d\n", minutes)
+	fmt.Printf("Seconds: %d\n", seconds)
 }
