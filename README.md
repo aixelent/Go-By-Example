@@ -11,7 +11,7 @@
 ### Examples
  - G01 - Swap two numbers without temporary variable.
  - G02 - Generate multiplication table 12 x 12.
- - 003 - Even/Odd numbers.
+ - G03 - Even/Odd numbers.
  - G04 - Compare two strings.
  - G05 - Get first element from slice and remove this element.
  - G06 - Get last element from slice and remove this element.
