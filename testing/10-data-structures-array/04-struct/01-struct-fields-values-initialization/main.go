@@ -1,0 +1,1 @@
+package _1_struct_fields_values_initialization
