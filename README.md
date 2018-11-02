@@ -41,6 +41,14 @@
  - G30 - Find element in slice or map and move it to first position.
  - G31 - Convert struct to JSON.
  - G32 - Check if string is in a JSON format.
+ - G33 - Read file char by char.
+ - G34 - Append text fo file.
+ - G35 - 
+ - G36 - 
+ - G37 - 
+ - G38 - 
+ - G39 - 
+ - G40 - 
  - G33 - Decode JSON from input stream.
  - G34 - OOP example: Function takes interface as value.
  - G35 - OOP example: Function takes interface as pointer.
