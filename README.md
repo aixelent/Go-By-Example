@@ -43,16 +43,29 @@
  - G32 - Check if string is in a JSON format.
  - G33 - Read file char by char.
  - G34 - Append text fo file.
- - G35 - 
- - G36 - 
- - G37 - 
- - G38 - 
- - G39 - 
- - G40 - 
+ - G35 - CRUD file - Create empty file. Add some information to file. Read file. Delete file.
+ - G36 - Get system process information for this example. Try using ``` os.Getpid() ```.
+ - G37 - Replace all numbers in string with 'x' char.
+ - G38 - Delete element from map and return map length before and after deleting item.
+ - G39 - Create CSV file with any data.
+ - G40 - Execute any terminal command from go code. Try using ```exec.Command```.
+ - 041 - Check if string contain a specified word.
+ - 042 - Split string into separate words
+ - 043 - Replace one word type in a string.
+ - 044 - Replace a few different words in string.
+ - 045 -
+ - 046 -
+ - 047 -
+ - 048 -
+ - 049 -
+ - 050 -
+
+<!--
  - G33 - Decode JSON from input stream.
  - G34 - OOP example: Function takes interface as value.
  - G35 - OOP example: Function takes interface as pointer.
  - G36 - Create custom error.
  - G37 - Replace numbers in string with 'x' char.
-<!-- - 040 - Generate 256 bit key. -->
-<!-- - 045(50) - Split URL and getting his parameters. -->
+ 040 - Generate 256 bit key.
+ 045(50) - Split URL and getting his parameters.
+ -->
