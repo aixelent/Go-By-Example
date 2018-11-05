@@ -1,4 +1,4 @@
-package _1
+package G43
 
 import (
 	"fmt"
