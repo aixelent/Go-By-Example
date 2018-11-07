@@ -14,7 +14,7 @@ func convertFloat() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Float: ", flo)
+	fmt.Printf("Float: %f\n", flo)
 }
 
 func convertInt() {
@@ -22,7 +22,7 @@ func convertInt() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Int: ", in)
+	fmt.Printf("Int: %d\n", in)
 }
 
 func convertBin() {
@@ -30,7 +30,7 @@ func convertBin() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Binary:", b)
+	fmt.Printf("Binary: %b\n", b)
 }
 
 func main() {
