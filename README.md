@@ -49,23 +49,23 @@
  - G38 - Delete element from map and return map length before and after deleting item.
  - G39 - Create CSV file with any data.
  - G40 - Execute any terminal command from go code. Try using ```exec.Command```.
- - 041 - Check if string contain a specified word.
- - 042 - Split string into separate words
- - 043 - Replace one word type in a string.
- - 044 - Replace a few different words in string.
- - 045 -
- - 046 -
- - 047 -
- - 048 -
- - 049 -
- - 050 -
-
+ - G41 - Check if string contain a specified word.
+ - G42 - Split string into separate words
+ - G43 - Replace one word type in a string.
+ - G44 - Replace a few different words in string.
+ - G45 - Read CSV file.
+ - G46 - Convert string values (int, float, binary) to numeric values.
+ - G47 - Convert binary, decimal, hexadecimal and octal from string values to numeric values.
+ - G48 - Generate twenty random numbers with math/rand.
+ - G49 - Generate random numbers with crypto/rand.
+ - G50 - Generate string with random alphabetical characters.
+ - G51 -
 <!--
  - G33 - Decode JSON from input stream.
  - G34 - OOP example: Function takes interface as value.
  - G35 - OOP example: Function takes interface as pointer.
  - G36 - Create custom error.
  - G37 - Replace numbers in string with 'x' char.
- 040 - Generate 256 bit key.
+ 040 - Generate 256 bit key.k
  045(50) - Split URL and getting his parameters.
  -->
