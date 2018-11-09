@@ -6,7 +6,10 @@ import (
 )
 
 func main() {
-	loc, _ := time.LoadLocation("UTC")
+	loc, err := time.LoadLocation("UTC")
+	if err != nil {
+		panic(err)
+	}
 	now := time.Now().In(loc)
 	fmt.Println("\nToday: ", loc, "Time: ", now)
 
