@@ -60,12 +60,18 @@
  - G49 - Generate random numbers with crypto/rand.
  - G50 - Generate string with random alphabetical characters.
  - G51 -
+ - G52 - Convert map to JSON.
+ - G53 - Today's date.
+ - G54 - Format date to string.
+ - G55 - Extract name of day from date format ex. ```2018-11-29```.
+ - G56 -
+ - G57 -
+ - G58 -
+ - G59 -
 <!--
  - G33 - Decode JSON from input stream.
  - G34 - OOP example: Function takes interface as value.
  - G35 - OOP example: Function takes interface as pointer.
  - G36 - Create custom error.
- - G37 - Replace numbers in string with 'x' char.
  040 - Generate 256 bit key.k
- 045(50) - Split URL and getting his parameters.
  -->
