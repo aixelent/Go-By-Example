@@ -19,16 +19,16 @@ func (s *Sync) Write(b []byte) (n int, err error) {
 }
 
 var Data = []string{
-	"A",
-	"B",
-	"C",
-	"D",
-	"E",
-	"F",
+	"Cobol",
+	"Golang",
+	"Java",
+	"Javascript",
+	"Python",
+	"Scala",
 }
 
 func main() {
-	f, err := os.Create("file.txt")
+	f, err := os.Create("/home/xhexe/go/src/Go-By-Example/G56/file1.txt")
 	if err != nil {
 		panic(err)
 	}
