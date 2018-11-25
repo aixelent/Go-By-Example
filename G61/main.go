@@ -2,54 +2,22 @@ package main
 
 import (
 	"fmt"
-	"net"
+	"log"
+	"os"
 )
 
-var ip = "140.82.118.4"
-var domain = "http://github.com"
-
-func byIP() {
-	// by address
-	ips, err := net.LookupIP(ip)
+func getFileInfo() {
+	info, err := os.Stat("file1.txt")
 	if err != nil {
-		fmt.Println(err)
+		log.Fatalln(err)
 	}
-	for _, ip := range ips {
-		fmt.Println(ip.String())
-	}
-}
-
-func byDomain() {
-	addr, err := net.LookupAddr(ip)
-	if err != nil {
-		fmt.Println(err)
-	}
-	for _, ip := range addr {
-		fmt.Println(ip)
-	}
-	//return err
-}
-
-func byHost() {
-	addr, err := net.LookupHost(domain)
-	if err, ok := err.(*net.DNSError); ok {
-		if err.Timeout() {
-			fmt.Println("Timed out")
-		} else if err.Temporary() {
-			fmt.Println("Temporary")
-		} else {
-			fmt.Println("Generic error", err)
-		}
-		return
-	}
-	fmt.Println(addr)
+	fmt.Println("Is directory: ", info.IsDir())
+	fmt.Println("Filename: ", info.Name())
+	fmt.Println("Size: ", info.Size())
+	fmt.Println("Modification time: ", info.ModTime())
+	fmt.Println("Permission: ", info.Mode())
 }
 
 func main() {
-	fmt.Println("By IP:\n")
-	byIP()
-	fmt.Println("By domain:\n")
-	byDomain()
-	fmt.Println("By host:")
-	byHost()
+	getFileInfo()
 }
