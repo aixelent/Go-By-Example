@@ -1,50 +1,49 @@
 package main
 
 import (
+	"encoding/xml"
 	"fmt"
 	"io/ioutil"
-	"net/http"
-	"strings"
+	"os"
 )
 
-const addr = "http://localhost:8080"
-
-type StringServer string
-
-func (s StringServer) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
-	request.ParseForm()
-	fmt.Printf("Data: %v\n", request.Form)
-	writer.Write([]byte(string(s)))
+type Albums struct {
+	XMLName xml.Name `xml:"albums"`
+	Albums  []Album  `xml:"album"`
 }
 
-func goServer(addr string) http.Server {
-	return http.Server{
-		Addr:    addr,
-		Handler: StringServer("Test"),
-	}
+type Album struct {
+	Title       string `xml:"title"`
+	Author      string `xml:"author"`
+	Genre       string `xml:"genre"`
+	Style       string `xml:"style"`
+	Year        string `xml:"year"`
+	Description string `xml:"description"`
 }
 
-func simplePost() {
-	res, err := http.Post(addr, "application//x-www-form-urlencoded", strings.NewReader("name=Adrian"))
+func readFle() {
+	// f, err := os.OpenFile("file.xml", os.O_WRONLY, 0755)
+	f, err := os.Open("file.xml")
 	if err != nil {
 		panic(err)
 	}
+	defer f.Close()
 
-	data, err := ioutil.ReadAll(res.Body)
-	if err != nil {
-		panic(err)
+	value, _ := ioutil.ReadAll(f)
+	var albums Albums
+	xml.Unmarshal(value, &albums)
+
+	for i := 0; i < len(albums.Albums); i++ {
+		fmt.Println("Album title", albums.Albums[i].Title)
+		fmt.Println("Author:", albums.Albums[i].Author)
+		fmt.Println("Genre:", albums.Albums[i].Genre)
+		fmt.Println("Style:", albums.Albums[i].Style)
+		fmt.Println("Year:", albums.Albums[i].Year)
+		fmt.Println("Description:", albums.Albums[i].Description)
+		fmt.Println()
 	}
-
-	res.Body.Close()
-	fmt.Println("Server response:" + string(data))
 }
-
-func useRequest() {}
 
 func main() {
-	s := goServer(addr)
-	go s.ListenAndServe()
-
-	simplePost()
-	useRequest()
+	readFle()
 }
