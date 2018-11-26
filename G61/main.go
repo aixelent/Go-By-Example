@@ -6,8 +6,10 @@ import (
 	"os"
 )
 
+var fileName = "file1.txt"
+
 func getFileInfo() {
-	info, err := os.Stat("file1.txt")
+	info, err := os.Stat(fileName)
 	if err != nil {
 		log.Fatalln(err)
 	}
