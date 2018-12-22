@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-var filePath = "file.txt"
+var filePath = "file1.txt"
 
 func createFile() {
 	f, err := os.Create(filePath)
