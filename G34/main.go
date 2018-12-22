@@ -9,7 +9,7 @@ import (
 
 // ReadFileBefore (...)
 func ReadFileBefore() {
-	file, err := ioutil.ReadFile("file.txt")
+	file, err := ioutil.ReadFile("file1.txt")
 	if err != nil {
 		log.Panicln(err)
 		os.Exit(1)
@@ -19,7 +19,7 @@ func ReadFileBefore() {
 
 // AppendToFile (...)
 func AppendToFile() {
-	file, err := os.OpenFile("file.txt", os.O_WRONLY|os.O_APPEND, 0644)
+	file, err := os.OpenFile("file1.txt", os.O_WRONLY|os.O_APPEND, 0644)
 	if err != nil {
 		log.Panicln(err)
 	}
@@ -34,7 +34,7 @@ func AppendToFile() {
 
 // ReadFileAfter (...)
 func ReadFileAfter() {
-	file, err := ioutil.ReadFile("file.txt")
+	file, err := ioutil.ReadFile("file1.txt")
 	if err != nil {
 		log.Panicln(err)
 		os.Exit(1)
