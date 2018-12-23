@@ -8,7 +8,7 @@ import (
 )
 
 func NewFile() {
-	file, err := os.Create("file1.txt")
+	file, err := os.Create("file.txt")
 	if err != nil {
 		log.Fatalln("File not created", err)
 	}
@@ -16,7 +16,7 @@ func NewFile() {
 
 	bytes, err := file.WriteString("report")
 	if err != nil {
-		log.Fatalln("Failed writing to file.")
+		log.Fatalf("Failed writing to file.")
 	}
 
 	fmt.Printf("\nFile: %s, successfully created", file.Name())
@@ -24,7 +24,7 @@ func NewFile() {
 }
 
 func ReadFile() {
-	bytes, err := ioutil.ReadFile("file1.txt")
+	bytes, err := ioutil.ReadFile("file.txt")
 	if err != nil {
 		log.Fatalf("Cannot reading data from file %s", err)
 	}
