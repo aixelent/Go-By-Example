@@ -34,7 +34,7 @@ func readFle() {
 	xml.Unmarshal(value, &albums)
 
 	for i := 0; i < len(albums.Albums); i++ {
-		fmt.Println("Album title", albums.Albums[i].Title)
+		fmt.Println("Album title:", albums.Albums[i].Title)
 		fmt.Println("Author:", albums.Albums[i].Author)
 		fmt.Println("Genre:", albums.Albums[i].Genre)
 		fmt.Println("Style:", albums.Albums[i].Style)
