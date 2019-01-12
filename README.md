@@ -59,16 +59,43 @@
  - G48 - Generate twenty random numbers with math/rand.
  - G49 - Generate random numbers with crypto/rand.
  - G50 - Generate string with random alphabetical characters.
- - G51 -
+ - G51 - Generate image.
  - G52 - Convert map to JSON.
  - G53 - Today's date.
  - G54 - Format date to string.
  - G55 - Extract name of day from date format ex. ```2018-11-29```.
- - G56 -
- - G57 -
+ - G56 - Write to file with goroutines.
+ - G57 - Creating custom error from [error package](https://golang.org/src/errors/errors.go?s=293:320#L1) in a very basic calculator.
  - G58 -
  - G59 -
+ - G60 - File operations: Create file.
+ - G61 - File operations: Get file info (Name, Size, Modification date, if path
+ - G62 - File operations: Rename file.
+ - G63 - File operations: Delete file.
+ - G64 - File operations: Check if file exists.
+ - G65 - File operations: Change file permission.
+ - G66 - File operations: Change file timestamp.
+ - G67 - File operations: Copy file.
+ - G68 - File operations: Hash file.
+ - G69 -
+ - G70 - Create HTTP request.
+ - G71 - Connecting to PostgreSQL.
+ - G72 - Execute query to database (PostgreSQL in this example).
+ - G73 - Read query metadata.
+ - G74 - Obtaining data from query result.
+ - G75 - Create simple HTTP server.
+ - G76 - Handling HTTP request.
+ - G77 -
+ - G78 -
+ - G79 -
+ - G80 -
+ - G80 - Parse XML file.
+ - G81 - Simple RESTful API.
+ - G100 - TCP server.
 <!--
+ - Gtest - Test
+ - Gxx - Create HTTP server and connect to them.i
+ - Gxxx - Resolve domain by IP and IP by domain.
  - G33 - Decode JSON from input stream.
  - G34 - OOP example: Function takes interface as value.
  - G35 - OOP example: Function takes interface as pointer.
