@@ -12,3 +12,6 @@
 *.out
 *.idea
 *.testing
+
+# Directories
+samples/
