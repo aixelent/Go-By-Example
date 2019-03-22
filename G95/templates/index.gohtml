@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title></title>
+</head>
+<body>
+<table border="1">
+  <tr>
+    <td>ID</td>
+    <td>Username</td>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>Action</td>
+  </tr>
+  {{ if . }}
+    {{ range . }}
+      <tr>
+        <td>{{ .ID }}</td>
+        <td>{{ .userName }}</td>
+        <td>{{ .firstName }}</td>
+        <td>{{ .lastName }}</td>
+      </tr>
+      <a hrefe="/deleteUsers?id={{ .ID }}">Delete</a>
+      <a href="/editUsers?id={{ .ID }}">Edit</a>
+    {{end}}
+  {{end}}
+</table>
+</body>
+</html>
