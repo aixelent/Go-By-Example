@@ -1,44 +1,28 @@
 package main
 
 import (
-	"database/sql"
-	"fmt"
-	"log"
-
-	_ "github.com/go-sql-driver/mysql"
+	"Go-By-Example/G90/handlers"
+	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
 )
-
-var (
-	db  *sql.DB
-	err error
-)
-
-const (
-	DbDriver = "mysql"
-	DbName   = "testing"
-	DbUser   = "user"
-	DbPass   = "userpass"
-	DbURL    = DbUser + ":" + DbPass + "@/" + DbName
-)
-
-func logErr(err error) {
-	if err != nil {
-		log.Fatalln("Error:", err)
-		return
-	}
-}
-
-func init() {
-	db, err = sql.Open(DbDriver, DbURL)
-	logErr(err)
-
-	if err = db.Ping(); err != nil {
-		logErr(err)
-	} else {
-		fmt.Println("DB Connected successfully.")
-	}
-}
 
 func main() {
-	defer db.Close()
+	e := echo.New()
+	g := e.Group("/middleware")
+
+	g.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
+		Format:           `[${time_rfc3339}] ${method} ${status} ${host}${path} ${latency} ${latency_human}` + "\n",
+		CustomTimeFormat: "2006-01-02 15:04:05",
+	}))
+
+	g.Use(middleware.BasicAuth(func(userLogin, password string, e echo.Context) (bool, error) {
+		if userLogin == "admin" && password == "admin123" {
+			return true, nil
+		}
+		return false, nil
+	}))
+
+	g.GET("/main", handlers.MiddlewareMain)
+
+	e.Logger.Fatal(e.Start(":8080"))
 }
